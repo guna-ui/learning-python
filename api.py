@@ -1,4 +1,10 @@
-x=12
-y=10
+import requests
+import json
 
-print(x,y)
+
+url="https://jsonmock.hackerrank.com/api/football_matches"
+
+response=requests.get(url)
+
+
+print(response.json())
