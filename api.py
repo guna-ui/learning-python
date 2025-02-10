@@ -1,10 +1,19 @@
 import requests
 import json
 
+# API endpoint URL
+url = "https://api.example.com/data"  # Replace with your API URL
 
-url="https://jsonmock.hackerrank.com/api/football_matches"
+# Optional: Add parameters (query string)
+params = {"key1": "value1", "key2": "value2"}
 
-response=requests.get(url)
+# Optional: Add headers (e.g., for authentication or content type)
+headers = {"Content-Type": "application/json"}
 
 
-print(response.json())
+try:
+    response=requests.get(url,params=params,headers=headers)
+    response.raise_for_status()
+    
+except requests.exceptions.RequestException as e:
+    print(f"Error: {e}")
