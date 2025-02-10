@@ -1,4 +1,4 @@
 x=12
+y=10
 
-
-print(x)
+print(x,y)
